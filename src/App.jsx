@@ -15,16 +15,22 @@ import ConsultoriaPymes from './pages/ConsultoriaPymes';
 import BeneficiosProcesos from './pages/BeneficiosProcesos';
 import CompetitividadPymes from './pages/CompetitividadPymes';
 import Garantia from './pages/Garantia';
+import Clientes from './pages/Clientes';
+import MejoraContinuaPymes from './pages/MejoraContinuaPymes';
+import ComoTenerReunionesEfectivas from './pages/ComoTenerReunionesEfectivas';
 
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div className="app-container">
         <Navbar />
-        <main style={{ padding: '2rem', flex: 1 }}>
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/nosotros" element={<EnfoquePyme />} />
+            <Route path="/clientes" element={<Clientes />} />
+            <Route path="/mejora-continua-pymes" element={<MejoraContinuaPymes />} />
+            <Route path="/como-tener-reuniones-efectivas" element={<ComoTenerReunionesEfectivas />} />
             <Route path="/servicios" element={<LineasConsultoria />} />
             <Route path="/nuestra-forma-de-trabajo" element={<NuestraFormaDeTrabajo />} />
             <Route path="/contacto" element={<Contacto />} />

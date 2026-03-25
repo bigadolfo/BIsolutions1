@@ -1,7 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Contacto = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    apellidos: '',
+    email: '',
+    telefono: '',
+    empresa: '',
+    cargo: '',
+    dni: '',
+    mensaje: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if all fields are filled
+    const isFormComplete = Object.values(formData).every(value => value.trim() !== '');
+    
+    if (!isFormComplete) {
+      alert('Por favor, complete todos los campos obligatorios.');
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      alert('Por favor, ingrese un correo electrónico válido.');
+      return;
+    }
+
+    // Construct WhatsApp message
+    const phoneNumber = '51987951261'; // Formatting for WhatsApp URL (no +)
+    const text = `*Nuevo Mensaje de Contacto*\n\n` +
+                 `*Nombre:* ${formData.nombre} ${formData.apellidos}\n` +
+                 `*Email:* ${formData.email}\n` +
+                 `*Teléfono:* ${formData.telefono}\n` +
+                 `*Empresa:* ${formData.empresa}\n` +
+                 `*Cargo:* ${formData.cargo}\n` +
+                 `*DNI:* ${formData.dni}\n` +
+                 `*Mensaje:* ${formData.mensaje}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="w-full flex flex-col font-sans text-gray-800 bg-white">
       {/* HERO SECTION / BREADCRUMBS */}
@@ -26,45 +84,101 @@ const Contacto = () => {
               Envíanos un mensaje desde este formulario y con gusto nos pondremos en contacto a la brevedad.
             </p>
             
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Nombre *</label>
-                <input type="text" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="text" 
+                  name="nombre"
+                  value={formData.nombre}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Apellidos *</label>
-                <input type="text" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="text" 
+                  name="apellidos"
+                  value={formData.apellidos}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Correo electrónico *</label>
-                <input type="email" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Teléfono *</label>
-                <input type="tel" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="tel" 
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Empresa *</label>
-                <input type="text" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="text" 
+                  name="empresa"
+                  value={formData.empresa}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Cargo *</label>
-                <input type="text" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="text" 
+                  name="cargo"
+                  value={formData.cargo}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">DNI *</label>
-                <input type="text" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" required />
+                <input 
+                  type="text" 
+                  name="dni"
+                  value={formData.dni}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all" 
+                  required 
+                />
               </div>
               
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label className="text-sm font-bold text-gray-700 uppercase">Mensaje *</label>
-                <textarea rows="5" className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all resize-none" required></textarea>
+                <textarea 
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleChange}
+                  rows="5" 
+                  className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 transition-all resize-none" 
+                  required
+                ></textarea>
               </div>
 
               <div className="md:col-span-2">
@@ -93,7 +207,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Teléfono</p>
-                  <p className="text-lg font-bold text-blue-900">999 838 200</p>
+                  <p className="text-lg font-bold text-blue-900">987 951 261</p>
                 </div>
               </div>
 

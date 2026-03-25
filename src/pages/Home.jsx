@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import portada from '../images/portada.jpeg';
 
 const Home = () => {
   return (
     <div className="w-full flex flex-col font-sans text-gray-800">
       {/* HERO SECTION */}
-      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center bg-blue-900 text-white overflow-hidden">
-        {/* Abstract Background Decoration */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 -left-1/4 w-full h-full bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl transform rotate-12"></div>
-          <div className="absolute bottom-0 -right-1/4 w-full h-full bg-gradient-to-tl from-green-400 to-transparent rounded-full blur-3xl transform -rotate-12"></div>
-        </div>
+      <section 
+        className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-white overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: `url(${portada})` }}
+      >
+        {/* Capa superpuesta (Overlay) para legibilidad del texto */}
+        <div className="absolute inset-0 bg-blue-900/60"></div>
         
         <div className="relative z-10 text-center max-w-4xl px-6">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">

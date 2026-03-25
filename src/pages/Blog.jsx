@@ -33,7 +33,7 @@ const Blog = () => {
       titulo: "Cómo aplicar la mejora continua en mi PYME",
       extracto: "La mejora continua para tu PYME ayudará en el crecimiento y desarrollo que necesitas. En Pyme Solutions sabemos la necesidad de cambios que generen resultados...",
       fecha: "junio 27, 2022",
-      path: "/blog"
+      path: "/mejora-continua-pymes"
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const Blog = () => {
       titulo: "10 consejos para tener reuniones efectivas de trabajo",
       extracto: "Para tener reuniones efectivas debemos considerar como finalidad el uso eficiente de los recursos, el aporte de ideas valiosas, consensuar acuerdos y proyectar su cumplimiento.",
       fecha: "junio 27, 2022",
-      path: "/blog"
+      path: "/como-tener-reuniones-efectivas"
     },
     {
       id: 6,
