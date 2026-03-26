@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer: React.FC = (): JSX.Element => {
   return (
     <>
       {/* [TEMA FOOTER]: 'bg-footer-bg' para el fondo general del footer y 'text-footer-text' para el texto general */}

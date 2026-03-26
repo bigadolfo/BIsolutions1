@@ -1,17 +1,28 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo1.PNG';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isServiciosOpen, setIsServiciosOpen] = useState(false);
+interface SubMenuItem {
+  path: string;
+  label: string;
+}
 
-  const toggleMenu = () => {
+interface NavLink {
+  path: string;
+  label: string;
+  submenu?: SubMenuItem[];
+}
+
+const Navbar: React.FC = (): JSX.Element => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isServiciosOpen, setIsServiciosOpen] = useState<boolean>(false);
+
+  const toggleMenu = (): void => {
     setIsOpen(!isOpen);
     setIsServiciosOpen(false);
   };
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { path: '/', label: 'Inicio' },
     { path: '/nosotros', label: 'Nosotros' },
     { path: '/clientes', label: 'Clientes' },

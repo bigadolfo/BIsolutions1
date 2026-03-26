@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -20,7 +21,7 @@ import MejoraContinuaPymes from './pages/MejoraContinuaPymes';
 import ComoTenerReunionesEfectivas from './pages/ComoTenerReunionesEfectivas';
 import NotFound from './pages/NotFound';
 
-function App() {
+const App: React.FC = (): JSX.Element => {
   return (
     <BrowserRouter>
       <div className="app-container">

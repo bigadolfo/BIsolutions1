@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import portada from '../images/portada.jpeg';
 
-const Home = () => {
+const Home: React.FC = (): JSX.Element => {
   return (
     <div className="w-full flex flex-col font-sans text-gray-800">
       {/* HERO SECTION */}
