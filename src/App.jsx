@@ -18,6 +18,7 @@ import Garantia from './pages/Garantia';
 import Clientes from './pages/Clientes';
 import MejoraContinuaPymes from './pages/MejoraContinuaPymes';
 import ComoTenerReunionesEfectivas from './pages/ComoTenerReunionesEfectivas';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/beneficios-de-la-gestion-por-procesos-para-pymes-en-peru" element={<BeneficiosProcesos />} />
             <Route path="/competitividad-en-las-pymes" element={<CompetitividadPymes />} />
             <Route path="/garantia" element={<Garantia />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
