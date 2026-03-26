@@ -1,10 +1,54 @@
 @import "tailwindcss";
 
+:root {
+  /* =========================================================
+     [DESIGN TOKENS: NAVBAR, BOTONES Y FOOTER]
+     Modifica únicamente estos valores para cambiar el tema
+     ========================================================= */
+
+  /* 1. NAVBAR */
+  --theme-nav-bg: #f7f7f7;        /* Fondo del Navbar */
+  --theme-nav-text: #376fd6;      /* Texto de los enlaces del Navbar */
+  --theme-nav-hover: #1a3a7a;     /* Color del texto al pasar el ratón (Hover) */
+
+  /* 2. BOTONES */
+  --theme-btn-bg: #228F63;        /* Fondo principal de los botones */
+  --theme-btn-hover: #27F591;     /* Fondo del botón al pasar el ratón */
+  --theme-btn-text: #ffffff;      /* Texto de los botones */
+
+  /* 3. FOOTER */
+  --theme-footer-bg: #001d3d;     /* Fondo del Footer */
+  --theme-footer-text: #ffffff;   /* Texto general del Footer */
+  --theme-footer-accent: #f59e0b; /* Color de acento (líneas, iconos y hover) en el Footer */
+  
+  /* 4. TIPOGRAFÍA GLOBAL */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+@theme {
+  /* =========================================================
+     [MAPEO DE TOKENS PARA TAILWIND]
+     Estas variables se usan como clases (ej. bg-nav-bg)
+     ========================================================= */
+  --color-nav-bg: var(--theme-nav-bg);
+  --color-nav-text: var(--theme-nav-text);
+  --color-nav-hover: var(--theme-nav-hover);
+
+  --color-btn-bg: var(--theme-btn-bg);
+  --color-btn-hover: var(--theme-btn-hover);
+  --color-btn-text: var(--theme-btn-text);
+
+  --color-footer-bg: var(--theme-footer-bg);
+  --color-footer-text: var(--theme-footer-text);
+  --color-footer-accent: var(--theme-footer-accent);
+
+  --font-sans: var(--font-family-base);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

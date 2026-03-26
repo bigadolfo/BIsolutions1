@@ -11,19 +11,20 @@ const Home = () => {
         style={{ backgroundImage: `url(${portada})` }}
       >
         {/* Capa superpuesta (Overlay) para legibilidad del texto */}
-        <div className="absolute inset-0 bg-blue-900/60"></div>
+        <div className="absolute inset-0 bg-brand-primary/60"></div>
         
         <div className="relative z-10 text-center max-w-4xl px-6">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
             Somos especialistas en creación de valor para PYMES.
           </h1>
-          <p className="text-lg md:text-2xl mb-10 text-blue-100 font-light max-w-2xl mx-auto drop-shadow-sm">
+          <p className="text-lg md:text-2xl mb-10 text-white/90 font-light max-w-2xl mx-auto drop-shadow-sm">
             Optimizamos tu estrategia y procesos. Garantizamos resultados para hacer crecer tu negocio.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
+            {/* [TEMA BOTONES]: Botón principal con variables dinámicas */}
             <Link 
               to="/servicios" 
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="bg-btn-bg hover:bg-btn-hover text-btn-text font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               DESCUBRE MÁS
             </Link>
@@ -38,7 +39,7 @@ const Home = () => {
       </section>
 
       {/* VALUE PROPOSITION / ABOUT US SECTION */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-surface-50">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">Enfoque Pyme</h2>
@@ -90,8 +91,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {/* Service 1 */}
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 group">
-              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
               </div>
               <h4 className="text-xl font-bold mb-3 text-gray-900">Gestión por Procesos</h4>
               <p className="text-gray-600 mb-6 text-sm">Optimizamos los flujos de trabajo para aumentar la eficiencia y reducir costos operativos.</p>
@@ -102,7 +103,7 @@ const Home = () => {
 
             {/* Service 2 */}
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 group">
-              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
               </div>
               <h4 className="text-xl font-bold mb-3 text-gray-900">Planeamiento Estratégico</h4>
@@ -114,7 +115,7 @@ const Home = () => {
 
             {/* Service 3 */}
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 group">
-              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
               <h4 className="text-xl font-bold mb-3 text-gray-900">Auditoría Interna</h4>
@@ -126,7 +127,7 @@ const Home = () => {
 
             {/* Service 4 */}
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 group">
-              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
               </div>
               <h4 className="text-xl font-bold mb-3 text-gray-900">Gestión de Riesgos</h4>
@@ -138,7 +139,8 @@ const Home = () => {
           </div>
           
           <div className="mt-12">
-            <Link to="/servicios" className="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+            {/* [TEMA BOTONES]: Botón principal con variables dinámicas */}
+            <Link to="/servicios" className="inline-block bg-btn-bg hover:bg-btn-hover text-btn-text font-bold py-3 px-8 rounded-full transition duration-300">
               VER TODOS LOS SERVICIOS
             </Link>
           </div>
@@ -152,7 +154,7 @@ const Home = () => {
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Resultados 100% Garantizados</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto font-light">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-light">
             Confiamos tanto en nuestra metodología que nuestro compromiso es con tu crecimiento real y medible.
           </p>
           <Link to="/garantia" className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-md">
@@ -162,7 +164,7 @@ const Home = () => {
       </section>
 
       {/* BLOG / NEWS SECTION */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-surface-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">Actualidad</h2>
@@ -172,7 +174,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Blog Post 1 */}
             <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-300"></div>
+              <div className="h-48 bg-gray-200"></div>
               <div className="p-6">
                 <span className="text-xs font-semibold text-green-500 uppercase tracking-wider">Consultoría</span>
                 <h4 className="text-xl font-bold mt-2 mb-3 text-gray-900 leading-tight">
@@ -191,7 +193,7 @@ const Home = () => {
 
             {/* Blog Post 2 */}
             <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-300"></div>
+              <div className="h-48 bg-gray-200"></div>
               <div className="p-6">
                 <span className="text-xs font-semibold text-green-500 uppercase tracking-wider">Procesos</span>
                 <h4 className="text-xl font-bold mt-2 mb-3 text-gray-900 leading-tight">
@@ -210,7 +212,7 @@ const Home = () => {
 
             {/* Blog Post 3 */}
             <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-300"></div>
+              <div className="h-48 bg-gray-200"></div>
               <div className="p-6">
                 <span className="text-xs font-semibold text-green-500 uppercase tracking-wider">Estrategia</span>
                 <h4 className="text-xl font-bold mt-2 mb-3 text-gray-900 leading-tight">
@@ -229,7 +231,8 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/blog" className="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+            {/* [TEMA BOTONES]: Botón outline usando los tokens */}
+            <Link to="/blog" className="inline-block border-2 border-btn-bg text-btn-bg hover:bg-btn-bg hover:text-btn-text font-bold py-3 px-8 rounded-full transition duration-300">
               VER MÁS ARTÍCULOS
             </Link>
           </div>
