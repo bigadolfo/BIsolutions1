@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import portada from '../images/portada.jpeg';
+import portada from '../images/portada.webp';
 
 const Home: React.FC = (): JSX.Element => {
   return (
