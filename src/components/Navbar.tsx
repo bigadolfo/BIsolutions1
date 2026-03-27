@@ -171,6 +171,13 @@ const Navbar: React.FC = (): JSX.Element => {
             {/* Detalles extra en móvil */}
             <div className="pt-4 flex flex-col items-center space-y-4">
               <span className="text-nav-text font-bold text-sm">(+51) 987 951 261</span>
+              
+              {/* Opción Admin en móvil */}
+              <Link to={isAdmin ? "/PanelAdmin" : "/signin"} onClick={() => setIsOpen(false)} className="flex items-center text-xs text-gray-500 hover:text-nav-hover transition-colors">
+                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                ¿Es administrador?
+              </Link>
+
               <Link to="/contacto" onClick={() => setIsOpen(false)} className="bg-btn-bg text-btn-text px-8 py-3 rounded-full font-bold text-xs tracking-widest sm:hidden">
                 CONTACTO
               </Link>
